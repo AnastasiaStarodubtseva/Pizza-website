@@ -2,17 +2,20 @@ import React from 'react'
 
 function SortPopup() {
   const [visiblePopup, setVisiblePopup] = React.useState(false);
+  const sortRef = React.useRef(null);
 
   const togleVisiblePopup = () => {
     setVisiblePopup(!visiblePopup);
   };
 
+  const handleOutsideClick = (e) => {
+
+  }
 
   React.useEffect(() => {
-    setTimeout(() => {
-      console.log(111);
-    }, 500);
-  }, [visiblePopup]);
+    document.body.addEventListener('click', handleOutsideClick);
+
+  }, []);
 
   return (
     <div className="sort">
