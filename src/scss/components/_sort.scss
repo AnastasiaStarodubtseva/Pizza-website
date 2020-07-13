@@ -8,6 +8,12 @@
 
     svg {
       margin-right: 8px;
+      transform: rotate(180deg);
+      transition: all .4s;
+
+      &.rotated {
+        transform: rotate(0);
+      }
     }
 
     b {
@@ -41,6 +47,9 @@
         &.active,
         &:hover {
           background: rgba(254, 95, 30, 0.05);
+        }
+
+        &.active {
           font-weight: bold;
           color: $orange;
         }
