@@ -6,9 +6,9 @@ function counter(state = 0, action) {
     case 'ДОБАВИТЬ':
       return state + 1
     case 'ОТНЯТЬ':
-      return state - 1
+      return state - 1;
     default:
-      return state
+      return state;
   }
 }
 
