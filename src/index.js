@@ -1,14 +1,22 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { BrowserRouter as Router} from 'react-router-dom';
-import Header from './components/Header';
+import { BrowserRouter as Router } from 'react-router-dom';
 import './scss/app.scss';
 import App from './App';
+import store from './redux/store';
+import { Provider } from 'react-redux';
 
+const inc = () => {
+  store.dispatch({
+    type: 'ДОБАВИТЬ',
+  });
+};
 
 ReactDOM.render(
     <Router>
-      <App />
+      <Provider store={store}>
+        <App />
+      </Provider>
     </Router>,
   document.getElementById('root')
 );
