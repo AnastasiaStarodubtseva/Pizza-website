@@ -1,17 +1,8 @@
 import { createStore } from 'redux';
+import rootReducer from './reducers'
 
+const store = createStore(rootReducer);
 
-function counter(state = 0, action) {
-  switch (action.type) {
-    case 'ДОБАВИТЬ':
-      return state + 1
-    case 'ОТНЯТЬ':
-      return state - 1;
-    default:
-      return state;
-  }
-}
-
-const store = createStore(counter);
+window.store = store;
 
 export default store;
